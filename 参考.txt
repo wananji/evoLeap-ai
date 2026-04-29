@@ -1,0 +1,589 @@
+<!-- OpenAI Homepage -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms ,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400 ;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght ,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght ,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#444748",
+                    "secondary-fixed-dim": "#61dbb4",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-dim": "#ddd9d8",
+                    "border-subtle": "#E8E8E8",
+                    "on-surface": "#1c1b1b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#858383",
+                    "text-tertiary": "#9E9E9E",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "gradient-purple": "linear-gradient(135deg, #C4B5FD 0%, #93C5FD 100%)",
+                    "secondary-container": "#7cf5cc",
+                    "surface-canvas": "#FFFFFF",
+                    "surface-container-high": "#ebe7e6",
+                    "on-secondary-container": "#007056",
+                    "gradient-rose": "linear-gradient(135deg, #FF85B1 0%, #FFE4B2 100%)",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#868381",
+                    "inverse-surface": "#313030",
+                    "inverse-primary": "#c9c6c5",
+                    "on-secondary-fixed": "#002117",
+                    "primary": "#000000",
+                    "inverse-on-surface": "#f4f0ef",
+                    "text-secondary": "#6B6B6B",
+                    "outline-variant": "#c4c7c7",
+                    "gradient-green": "linear-gradient(135deg, #22C55E 0%, #86EFAC 100%)",
+                    "background": "#fdf8f8",
+                    "primary-container": "#1c1b1b",
+                    "secondary-fixed": "#7ff8cf",
+                    "on-background": "#1c1b1b",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#000000",
+                    "tertiary-fixed": "#e6e1df",
+                    "surface-container-highest": "#e5e2e1",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f7f3f2",
+                    "surface-variant": "#e5e2e1",
+                    "surface-bright": "#fdf8f8",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#1d1b1a",
+                    "secondary": "#006c52",
+                    "surface-tint": "#5f5e5e",
+                    "on-primary-fixed": "#1c1b1b",
+                    "gradient-blue": "linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)",
+                    "gradient-orange": "linear-gradient(135deg, #F97316 0%, #FDE68A 100%)",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "on-tertiary-fixed": "#1d1b1a",
+                    "gradient-teal": "linear-gradient(135deg, #0D9488 0%, #34D399 100%)",
+                    "surface-container": "#f1edec",
+                    "on-secondary-fixed-variant": "#00513d",
+                    "outline": "#747878",
+                    "surface-soft": "#F5F5F5",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-fixed-dim": "#cac6c3",
+                    "text-primary": "#1A1A1A",
+                    "surface": "#fdf8f8",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "md": "24px",
+                    "lg": "32px",
+                    "xs": "8px",
+                    "base": "8px",
+                    "sm": "16px",
+                    "xl": "48px"
+            },
+            "fontFamily": {
+                    "nav-item": ["Inter"],
+                    "meta-data": ["Inter"],
+                    "section-title": ["Inter"],
+                    "body-main": ["Inter"],
+                    "card-title": ["Inter"],
+                    "hero-title": ["Inter"]
+            },
+            "fontSize": {
+                    "nav-item": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "meta-data": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "section-title": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-main": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "card-title": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "hero-title": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bg-gradient-rose { background: linear-gradient(135deg, #FF85B1 0%, #FFE4B2 100%); }
+        .bg-gradient-blue { background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); }
+        .bg-gradient-teal { background: linear-gradient(135deg, #0D9488 0%, #34D399 100%); }
+        .bg-gradient-orange { background: linear-gradient(135deg, #F97316 0%, #FDE68A 100%); }
+    </style>
+</head>
+<body class="bg-surface-canvas text-on-surface font-body-main selection:bg-secondary-container">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-100 dark:border-zinc-800">
+<div class="flex justify-between items-center h-16 px-6 max-w-[1200px] mx-auto w-full">
+<div class="flex items-center gap-10">
+<span class="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50" style="">EvoLeap AI</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-nav-item text-nav-item text-zinc-900 dark:text-zinc-50 font-semibold transition-colors duration-200" href="#" style="">产品</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#" style="">技术</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#" style="">合作</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#" style="">公司</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 transition-colors" style="">Log in</button>
+<button class="font-nav-item text-nav-item bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-80 transition-opacity" style="">Sign up</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="max-w-[1200px] mx-auto px-6 py-xl">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+<div class="lg:col-span-2 space-y-md">
+<div class="aspect-[16/9] w-full rounded-xl bg-gradient-rose flex items-center justify-center relative overflow-hidden" data-alt="vibrant abstract gradient flowing from soft pink to warm yellow with a premium high-tech aesthetic">
+<h1 class="font-hero-title text-hero-title text-white drop-shadow-sm" style=""><br></h1>
+</div>
+<div class="pt-sm border-t border-border-subtle">
+<h2 class="font-section-title text-section-title text-text-primary" style="">EvoLeap News</h2>
+<p class="font-meta-data text-meta-data text-text-secondary mt-xs" style="">2024年11月15日</p>
+</div>
+</div>
+<div class="lg:col-span-1 flex flex-col gap-md">
+<!-- Feature Cards -->
+<div class="group cursor-pointer p-md border border-border-subtle rounded-xl hover:shadow-sm hover:-translate-y-1 transition-all duration-300">
+<p class="font-meta-data text-meta-data text-text-secondary mb-xs" style="">国家级交付保障</p>
+<h3 class="font-card-title text-card-title mb-sm" style=""><h3 class="font-card-title text-card-title mb-sm cursor-text" spellcheck="false" data-stitch-added-classes="cursor-text" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; outline: none !important;">三层堡垒架构</h3></h3>
+<div class="w-full h-32 bg-surface-container-low rounded-lg bg-gradient-purple" data-alt="stylized 3D rendering of creative tools floating in a soft purple light"></div>
+</div>
+<div class="group cursor-pointer p-md border border-border-subtle rounded-xl hover:shadow-sm hover:-translate-y-1 transition-all duration-300">
+<p class="font-meta-data text-meta-data text-text-secondary mb-xs" style="">颠覆性商业模式</p>
+<h3 class="font-card-title text-card-title mb-sm" style="">Base+RaaS</h3>
+<div class="w-full h-32 bg-surface-container-low rounded-lg bg-zinc-900 flex items-center justify-center" data-alt="minimalist dark background with glowing lines representing code syntax">
+<span class="material-symbols-outlined text-white text-4xl" style="">code</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News Section -->
+<section class="bg-surface-soft py-xl">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-section-title text-section-title" style="">合作案例</h2>
+<a class="font-nav-item text-nav-item text-secondary hover:underline" href="#" style="">查看全部</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- News Card 1 -->
+<div class="bg-white p-sm rounded-xl border border-border-subtle flex gap-md hover:shadow-md transition-all cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gradient-blue" data-alt="abstract blue spheres representing connected nodes and neural networks"></div>
+<div class="flex flex-col justify-between py-1">
+<h3 class="font-card-title text-card-title text-sm line-clamp-2" style=""><p data-pm-slice="1 1 []" class="" style="">北京口腔医院 × 数字化AI项目</p></h3>
+<p class="font-meta-data text-meta-data text-text-tertiary" style="">2024年9月12日</p>
+</div>
+</div>
+<!-- News Card 2 -->
+<div class="bg-white p-sm rounded-xl border border-border-subtle flex gap-md hover:shadow-md transition-all cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gradient-purple" data-alt="artistic representation of multi-modal AI blending shapes and colors"></div>
+<div class="flex flex-col justify-between py-1">
+<h3 class="font-card-title text-card-title text-sm line-clamp-2" style=""><p data-pm-slice="0 0 []" class="" style="">同仁眼科医院 × AI临床教学一体化平台</p></h3>
+<p class="font-meta-data text-meta-data text-text-tertiary" style="">2024年9月05日</p>
+</div>
+</div>
+<!-- News Card 3 -->
+<div class="bg-white p-sm rounded-xl border border-border-subtle flex gap-md hover:shadow-md transition-all cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gradient-green" data-alt="eco-friendly green leaf silhouettes integrated into high-tech circuits"></div>
+<div class="flex flex-col justify-between py-1">
+<h3 class="font-card-title text-card-title text-sm line-clamp-2" style=""><p data-pm-slice="0 0 []" class="" style="">福建医科大学附属第一医院 × 自动医疗报告解读系统</p></h3>
+<p class="font-meta-data text-meta-data text-text-tertiary" style="">2024年8月28日</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solutions Section -->
+<section class="max-w-[1200px] mx-auto px-6 py-xl">
+<h2 class="font-section-title text-section-title mb-lg" style="">解决方案</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-square w-full rounded-xl bg-gradient-teal mb-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-[1.02]" data-alt="cybernetic futuristic interface with teal glowing elements and digital data flows">
+<span class="text-white font-bold text-2xl tracking-widest" style=""><p data-pm-slice="1 1 []" class="" style="">Medical Agent OS 2.0</p></span>
+</div>
+<h3 class="font-card-title text-card-title" style="">Medical Agent OS 2.0</h3>
+<p class="font-body-main text-body-main text-text-secondary mt-xs" style="">自动化的企业级智能助理，重塑工作流程。</p>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-square w-full rounded-xl bg-gradient-orange mb-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-[1.02]" data-alt="dynamic warm orange waves symbolizing data intensity and processing power">
+<span class="text-white font-bold text-2xl tracking-widest" style="">VKA</span>
+</div>
+<h3 class="font-card-title text-card-title" style=""><h3 class="font-card-title text-card-title cursor-text" spellcheck="false" data-stitch-added-classes="cursor-text" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; outline: none !important;">VKA资产化引擎</h3></h3>
+<p class="font-body-main text-body-main text-text-secondary mt-xs" style="">深度学习研究的前沿阵地，探索无限可能。</p>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-square w-full rounded-xl bg-primary-container mb-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-[1.02]" data-alt="sleek monochrome geometric patterns with a deep charcoal background">
+<span class="text-on-primary font-bold text-2xl tracking-widest" style="">GEO</span>
+</div>
+<h3 class="font-card-title text-card-title" style=""><p data-pm-slice="1 1 []" class="" style="">GEO 增长引擎</p></h3>
+<p class="font-body-main text-body-main text-text-secondary mt-xs" style="">为全球顶级企业提供最强大的 AI 算力支持。</p>
+</div>
+</div>
+</section>
+<!-- Search/Help Section -->
+<section class="bg-surface-soft py-xl">
+<div class="max-w-[1200px] mx-auto px-6 text-center space-y-lg">
+<h2 class="font-section-title text-section-title" style="">有什么可以帮你？</h2>
+<div class="relative max-w-2xl mx-auto">
+<input class="w-full h-14 pl-6 pr-14 rounded-full border-none bg-white shadow-sm focus:ring-2 focus:ring-primary/10 font-body-main text-lg placeholder:text-text-tertiary" placeholder="咨询关于 EvoLeap 的一切..." type="text">
+<button class="absolute right-2 top-2 w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity" style="">
+<span class="material-symbols-outlined" style="">send</span>
+</button>
+</div>
+<div class="flex flex-wrap justify-center gap-xs">
+<span class="px-4 py-1.5 rounded-full bg-white border border-border-subtle font-meta-data text-meta-data text-text-secondary cursor-pointer hover:bg-surface-container-low transition-colors" style="">了解EvoLeap</span>
+<span class="px-4 py-1.5 rounded-full bg-white border border-border-subtle font-meta-data text-meta-data text-text-secondary cursor-pointer hover:bg-surface-container-low transition-colors" style="">查看定价</span>
+<span class="px-4 py-1.5 rounded-full bg-white border border-border-subtle font-meta-data text-meta-data text-text-secondary cursor-pointer hover:bg-surface-container-low transition-colors" style="">API 文档</span>
+</div>
+</div>
+</section>
+<!-- Footer CTA -->
+<section class="max-w-[1200px] mx-auto px-6 py-xl">
+<div class="bg-surface-soft rounded-xl p-lg flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="space-y-xs text-center md:text-left">
+<h3 class="font-card-title text-card-title" style="">开始使用 EvoLeap</h3>
+<p class="font-body-main text-body-main text-text-secondary" style="">立即体验全球领先的人工智能对话系统。</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-8 py-2.5 rounded-lg bg-primary text-on-primary font-nav-item text-nav-item hover:opacity-80 transition-opacity" style="">试用</button>
+<button class="px-8 py-2.5 rounded-lg border border-border-subtle bg-white font-nav-item text-nav-item hover:bg-surface-soft transition-colors" style="">联系销售</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-800 py-12">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<div>
+<span class="font-bold text-zinc-900 dark:text-zinc-50 block mb-4" style="">EvoLeap AI</span>
+<p class="font-sans text-xs text-zinc-500 dark:text-zinc-400 max-w-sm" style="">©&nbsp;<span style="font-size: 0.75rem;">2025 EvoLeap AI 极智跃维（北京）科技有限公司</span><div><span style="font-size: 0.75rem;"><br></span></div></p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest" style="">服务</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">Overview</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">Index</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">GTP-4o</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest" style="">解决方案</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">About us</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">News</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">Careers</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest" style="">联系我们</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style=""><ul data-pm-slice="0 0 []"><li class="" style=""><p class="" style="">contact@evoleap.ai</p></li></ul></a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style=""><p data-pm-slice="1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{}]" class="" style="">400-888-0199</p></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
+
+<!-- OpenAI Homepage -->
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms ,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400 ;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght ,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght ,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#444748",
+                    "secondary-fixed-dim": "#61dbb4",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-dim": "#ddd9d8",
+                    "border-subtle": "#E8E8E8",
+                    "on-surface": "#1c1b1b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#858383",
+                    "text-tertiary": "#9E9E9E",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "gradient-purple": "linear-gradient(135deg, #C4B5FD 0%, #93C5FD 100%)",
+                    "secondary-container": "#7cf5cc",
+                    "surface-canvas": "#FFFFFF",
+                    "surface-container-high": "#ebe7e6",
+                    "on-secondary-container": "#007056",
+                    "gradient-rose": "linear-gradient(135deg, #FF85B1 0%, #FFE4B2 100%)",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#868381",
+                    "inverse-surface": "#313030",
+                    "inverse-primary": "#c9c6c5",
+                    "on-secondary-fixed": "#002117",
+                    "primary": "#000000",
+                    "inverse-on-surface": "#f4f0ef",
+                    "text-secondary": "#6B6B6B",
+                    "outline-variant": "#c4c7c7",
+                    "gradient-green": "linear-gradient(135deg, #22C55E 0%, #86EFAC 100%)",
+                    "background": "#fdf8f8",
+                    "primary-container": "#1c1b1b",
+                    "secondary-fixed": "#7ff8cf",
+                    "on-background": "#1c1b1b",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#000000",
+                    "tertiary-fixed": "#e6e1df",
+                    "surface-container-highest": "#e5e2e1",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f7f3f2",
+                    "surface-variant": "#e5e2e1",
+                    "surface-bright": "#fdf8f8",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#1d1b1a",
+                    "secondary": "#006c52",
+                    "surface-tint": "#5f5e5e",
+                    "on-primary-fixed": "#1c1b1b",
+                    "gradient-blue": "linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)",
+                    "gradient-orange": "linear-gradient(135deg, #F97316 0%, #FDE68A 100%)",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "on-tertiary-fixed": "#1d1b1a",
+                    "gradient-teal": "linear-gradient(135deg, #0D9488 0%, #34D399 100%)",
+                    "surface-container": "#f1edec",
+                    "on-secondary-fixed-variant": "#00513d",
+                    "outline": "#747878",
+                    "surface-soft": "#F5F5F5",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-fixed-dim": "#cac6c3",
+                    "text-primary": "#1A1A1A",
+                    "surface": "#fdf8f8",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "md": "24px",
+                    "lg": "32px",
+                    "xs": "8px",
+                    "base": "8px",
+                    "sm": "16px",
+                    "xl": "48px"
+            },
+            "fontFamily": {
+                    "nav-item": ["Inter"],
+                    "meta-data": ["Inter"],
+                    "section-title": ["Inter"],
+                    "body-main": ["Inter"],
+                    "card-title": ["Inter"],
+                    "hero-title": ["Inter"]
+            },
+            "fontSize": {
+                    "nav-item": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "meta-data": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "section-title": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-main": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "card-title": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "hero-title": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bg-gradient-rose { background: linear-gradient(135deg, #FF85B1 0%, #FFE4B2 100%); }
+        .bg-gradient-blue { background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%); }
+        .bg-gradient-teal { background: linear-gradient(135deg, #0D9488 0%, #34D399 100%); }
+        .bg-gradient-orange { background: linear-gradient(135deg, #F97316 0%, #FDE68A 100%); }
+    </style>
+</head>
+<body class="bg-surface-canvas text-on-surface font-body-main selection:bg-secondary-container">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-100 dark:border-zinc-800">
+<div class="flex justify-between items-center h-16 px-6 max-w-[1200px] mx-auto w-full">
+<div class="flex items-center gap-10">
+<span class="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50" style="">EvoLeap AI</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-nav-item text-nav-item text-zinc-900 dark:text-zinc-50 font-semibold transition-colors duration-200" href="#" style="">产品</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#" style="">技术</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#" style="">合作</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#" style="">公司</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 transition-colors" style="">Log in</button>
+<button class="font-nav-item text-nav-item bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-80 transition-opacity" style="">Sign up</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="max-w-[1200px] mx-auto px-6 py-xl">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+<div class="lg:col-span-2 space-y-md">
+<div class="aspect-[16/9] w-full rounded-xl bg-gradient-rose flex items-center justify-center relative overflow-hidden" data-alt="vibrant abstract gradient flowing from soft pink to warm yellow with a premium high-tech aesthetic">
+<h1 class="font-hero-title text-hero-title text-white drop-shadow-sm" style=""><br></h1>
+</div>
+<div class="pt-sm border-t border-border-subtle">
+<h2 class="font-section-title text-section-title text-text-primary" style="">EvoLeap News</h2>
+<p class="font-meta-data text-meta-data text-text-secondary mt-xs" style="">2024年11月15日</p>
+</div>
+</div>
+<div class="lg:col-span-1 flex flex-col gap-md">
+<!-- Feature Cards -->
+<div class="group cursor-pointer p-md border border-border-subtle rounded-xl hover:shadow-sm hover:-translate-y-1 transition-all duration-300">
+<p class="font-meta-data text-meta-data text-text-secondary mb-xs" style="">国家级交付保障</p>
+<h3 class="font-card-title text-card-title mb-sm" style=""><h3 class="font-card-title text-card-title mb-sm cursor-text" spellcheck="false" data-stitch-added-classes="cursor-text" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; outline: none !important;">三层堡垒架构</h3></h3>
+<div class="w-full h-32 bg-surface-container-low rounded-lg bg-gradient-purple" data-alt="stylized 3D rendering of creative tools floating in a soft purple light"></div>
+</div>
+<div class="group cursor-pointer p-md border border-border-subtle rounded-xl hover:shadow-sm hover:-translate-y-1 transition-all duration-300">
+<p class="font-meta-data text-meta-data text-text-secondary mb-xs" style="">颠覆性商业模式</p>
+<h3 class="font-card-title text-card-title mb-sm" style="">Base+RaaS</h3>
+<div class="w-full h-32 bg-surface-container-low rounded-lg bg-zinc-900 flex items-center justify-center" data-alt="minimalist dark background with glowing lines representing code syntax">
+<span class="material-symbols-outlined text-white text-4xl" style="">code</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News Section -->
+<section class="bg-surface-soft py-xl">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-section-title text-section-title" style="">合作案例</h2>
+<a class="font-nav-item text-nav-item text-secondary hover:underline" href="#" style="">查看全部</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- News Card 1 -->
+<div class="bg-white p-sm rounded-xl border border-border-subtle flex gap-md hover:shadow-md transition-all cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gradient-blue" data-alt="abstract blue spheres representing connected nodes and neural networks"></div>
+<div class="flex flex-col justify-between py-1">
+<h3 class="font-card-title text-card-title text-sm line-clamp-2" style=""><p data-pm-slice="1 1 []" class="" style="">北京口腔医院 × 数字化AI项目</p></h3>
+<p class="font-meta-data text-meta-data text-text-tertiary" style="">2024年9月12日</p>
+</div>
+</div>
+<!-- News Card 2 -->
+<div class="bg-white p-sm rounded-xl border border-border-subtle flex gap-md hover:shadow-md transition-all cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gradient-purple" data-alt="artistic representation of multi-modal AI blending shapes and colors"></div>
+<div class="flex flex-col justify-between py-1">
+<h3 class="font-card-title text-card-title text-sm line-clamp-2" style=""><p data-pm-slice="0 0 []" class="" style="">同仁眼科医院 × AI临床教学一体化平台</p></h3>
+<p class="font-meta-data text-meta-data text-text-tertiary" style="">2024年9月05日</p>
+</div>
+</div>
+<!-- News Card 3 -->
+<div class="bg-white p-sm rounded-xl border border-border-subtle flex gap-md hover:shadow-md transition-all cursor-pointer">
+<div class="w-24 h-24 shrink-0 rounded-lg bg-gradient-green" data-alt="eco-friendly green leaf silhouettes integrated into high-tech circuits"></div>
+<div class="flex flex-col justify-between py-1">
+<h3 class="font-card-title text-card-title text-sm line-clamp-2" style=""><p data-pm-slice="0 0 []" class="" style="">福建医科大学附属第一医院 × 自动医疗报告解读系统</p></h3>
+<p class="font-meta-data text-meta-data text-text-tertiary" style="">2024年8月28日</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solutions Section -->
+<section class="max-w-[1200px] mx-auto px-6 py-xl">
+<h2 class="font-section-title text-section-title mb-lg" style="">解决方案</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-square w-full rounded-xl bg-gradient-teal mb-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-[1.02]" data-alt="cybernetic futuristic interface with teal glowing elements and digital data flows">
+<span class="text-white font-bold text-2xl tracking-widest" style=""><p data-pm-slice="1 1 []" class="" style="">Medical Agent OS 2.0</p></span>
+</div>
+<h3 class="font-card-title text-card-title" style="">Medical Agent OS 2.0</h3>
+<p class="font-body-main text-body-main text-text-secondary mt-xs" style="">自动化的企业级智能助理，重塑工作流程。</p>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-square w-full rounded-xl bg-gradient-orange mb-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-[1.02]" data-alt="dynamic warm orange waves symbolizing data intensity and processing power">
+<span class="text-white font-bold text-2xl tracking-widest" style="">VKA</span>
+</div>
+<h3 class="font-card-title text-card-title" style=""><h3 class="font-card-title text-card-title cursor-text" spellcheck="false" data-stitch-added-classes="cursor-text" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; outline: none !important;">VKA资产化引擎</h3></h3>
+<p class="font-body-main text-body-main text-text-secondary mt-xs" style="">深度学习研究的前沿阵地，探索无限可能。</p>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-square w-full rounded-xl bg-primary-container mb-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-[1.02]" data-alt="sleek monochrome geometric patterns with a deep charcoal background">
+<span class="text-on-primary font-bold text-2xl tracking-widest" style="">GEO</span>
+</div>
+<h3 class="font-card-title text-card-title" style=""><p data-pm-slice="1 1 []" class="" style="">GEO 增长引擎</p></h3>
+<p class="font-body-main text-body-main text-text-secondary mt-xs" style="">为全球顶级企业提供最强大的 AI 算力支持。</p>
+</div>
+</div>
+</section>
+<!-- Search/Help Section -->
+<section class="bg-surface-soft py-xl">
+<div class="max-w-[1200px] mx-auto px-6 text-center space-y-lg">
+<h2 class="font-section-title text-section-title" style="">有什么可以帮你？</h2>
+<div class="relative max-w-2xl mx-auto">
+<input class="w-full h-14 pl-6 pr-14 rounded-full border-none bg-white shadow-sm focus:ring-2 focus:ring-primary/10 font-body-main text-lg placeholder:text-text-tertiary" placeholder="咨询关于 EvoLeap 的一切..." type="text">
+<button class="absolute right-2 top-2 w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity" style="">
+<span class="material-symbols-outlined" style="">send</span>
+</button>
+</div>
+<div class="flex flex-wrap justify-center gap-xs">
+<span class="px-4 py-1.5 rounded-full bg-white border border-border-subtle font-meta-data text-meta-data text-text-secondary cursor-pointer hover:bg-surface-container-low transition-colors" style="">了解EvoLeap</span>
+<span class="px-4 py-1.5 rounded-full bg-white border border-border-subtle font-meta-data text-meta-data text-text-secondary cursor-pointer hover:bg-surface-container-low transition-colors" style="">查看定价</span>
+<span class="px-4 py-1.5 rounded-full bg-white border border-border-subtle font-meta-data text-meta-data text-text-secondary cursor-pointer hover:bg-surface-container-low transition-colors" style="">API 文档</span>
+</div>
+</div>
+</section>
+<!-- Footer CTA -->
+<section class="max-w-[1200px] mx-auto px-6 py-xl">
+<div class="bg-surface-soft rounded-xl p-lg flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="space-y-xs text-center md:text-left">
+<h3 class="font-card-title text-card-title" style="">开始使用 EvoLeap</h3>
+<p class="font-body-main text-body-main text-text-secondary" style="">立即体验全球领先的人工智能对话系统。</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-8 py-2.5 rounded-lg bg-primary text-on-primary font-nav-item text-nav-item hover:opacity-80 transition-opacity" style="">试用</button>
+<button class="px-8 py-2.5 rounded-lg border border-border-subtle bg-white font-nav-item text-nav-item hover:bg-surface-soft transition-colors" style="">联系销售</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-800 py-12">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<div>
+<span class="font-bold text-zinc-900 dark:text-zinc-50 block mb-4" style="">EvoLeap AI</span>
+<p class="font-sans text-xs text-zinc-500 dark:text-zinc-400 max-w-sm" style="">©&nbsp;<span style="font-size: 0.75rem;">2025 EvoLeap AI 极智跃维（北京）科技有限公司</span><div><span style="font-size: 0.75rem;"><br></span></div></p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest" style="">服务</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">Overview</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">Index</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">GTP-4o</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest" style="">解决方案</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">About us</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">News</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style="">Careers</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest" style="">联系我们</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style=""><ul data-pm-slice="0 0 []"><li class="" style=""><p class="" style="">contact@evoleap.ai</p></li></ul></a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#" style=""><p data-pm-slice="1 1 [&quot;bulletList&quot;,{},&quot;listItem&quot;,{}]" class="" style="">400-888-0199</p></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
