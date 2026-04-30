@@ -115,7 +115,7 @@ echo   部署完成！
 echo ========================================
 echo.
 echo 网站将在以下地址可用：
-echo https://%USERNAME%.github.io/%REPO_NAME%/
+echo https://anjiwang.top/evoLeap-ai/
 echo.
 echo 查看部署进度：
 echo https://github.com/%USERNAME%/%REPO_NAME%/actions
