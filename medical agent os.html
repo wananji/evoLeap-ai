@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "text-primary": "#1A1A1A",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "on-secondary-fixed": "#002117",
+                    "secondary-container": "#7cf5cc",
+                    "on-surface-variant": "#444748",
+                    "surface": "#fdf8f8",
+                    "on-error-container": "#93000a",
+                    "border-subtle": "#E8E8E8",
+                    "text-tertiary": "#9E9E9E",
+                    "surface-container-low": "#f7f3f2",
+                    "tertiary-fixed": "#e6e1df",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#747878",
+                    "secondary": "#006c52",
+                    "on-secondary-fixed-variant": "#00513d",
+                    "surface-container-high": "#ebe7e6",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#ddd9d8",
+                    "surface-container": "#f1edec",
+                    "secondary-fixed": "#7ff8cf",
+                    "tertiary-fixed-dim": "#cac6c3",
+                    "on-primary-fixed-variant": "#474646",
+                    "surface-soft": "#F5F5F5",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#858383",
+                    "inverse-on-surface": "#f4f0ef",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "inverse-surface": "#313030",
+                    "secondary-fixed-dim": "#61dbb4",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary-fixed": "#1d1b1a",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "background": "#fdf8f8",
+                    "surface-canvas": "#FFFFFF",
+                    "primary": "#000000",
+                    "outline-variant": "#c4c7c7",
+                    "surface-tint": "#5f5e5e",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "inverse-primary": "#c9c6c5",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fdf8f8",
+                    "tertiary-container": "#1d1b1a",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-container": "#1c1b1b",
+                    "on-secondary-container": "#007056",
+                    "tertiary": "#000000",
+                    "on-tertiary-container": "#868381",
+                    "on-primary-fixed": "#1c1b1b",
+                    "text-secondary": "#6B6B6B"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xs": "8px",
+                    "xl": "48px",
+                    "sm": "16px",
+                    "md": "24px",
+                    "container-max": "1200px",
+                    "lg": "32px"
+            },
+            "fontFamily": {
+                    "nav-item": ["Inter"],
+                    "section-title": ["Inter"],
+                    "body-main": ["Inter"],
+                    "meta-data": ["Inter"],
+                    "hero-title": ["Inter"],
+                    "card-title": ["Inter"]
+            },
+            "fontSize": {
+                    "nav-item": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "section-title": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-main": ["15px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "meta-data": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "hero-title": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "card-title": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gradient-bg {
+            background: radial-gradient(circle at top right, #3B82F610, transparent 40%),
+                        radial-gradient(circle at bottom left, #60A5FA10, transparent 40%);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E8E8E8;
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface-canvas font-body-main text-text-primary antialiased">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-100 dark:border-zinc-800">
+<div class="flex justify-between items-center h-16 px-6 max-w-[1200px] mx-auto w-full">
+<div class="flex items-center gap-10">
+<span class="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50">OpenAI</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-nav-item text-nav-item text-zinc-900 dark:text-zinc-50 font-semibold transition-colors duration-200" href="#">Research</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#">Products</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#">Safety</a>
+<a class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200" href="#">Company</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-nav-item text-nav-item text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 transition-colors">Log in</button>
+<button class="font-nav-item text-nav-item bg-primary text-on-primary px-4 py-2 rounded-lg hover:opacity-80 transition-opacity">Sign up</button>
+</div>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative overflow-hidden py-32 bg-white">
+<div class="absolute inset-0 gradient-bg opacity-50"></div>
+<div class="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
+<h1 class="font-hero-title text-hero-title max-w-4xl mx-auto mb-8 text-primary leading-tight">
+                    Medical Agent OS 2.0<br/>
+<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">专为医疗机构打造的 AI 原生运营操作系统</span>
+</h1>
+<p class="text-text-secondary text-lg max-w-2xl mx-auto mb-10">
+                    全面超越传统人力模式。从繁琐的医疗流程中解脱，将医疗专业知识转化为高流转、高效率的数字化资产。
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">开始免费体验</button>
+<button class="border border-border-subtle bg-white px-8 py-4 rounded-full font-semibold hover:bg-surface-soft transition-all w-full sm:w-auto flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span> 查看演示视频
+                    </button>
+</div>
+</div>
+<!-- Product Preview Image -->
+<div class="max-w-[1000px] mx-auto mt-20 px-6">
+<div class="rounded-xl border border-border-subtle overflow-hidden shadow-2xl">
+<img class="w-full h-auto" data-alt="A clean, professional UI dashboard of the Medical Agent OS 2.0 interface showing patient data analytics, AI agent workflow nodes, and automated scheduling calendars. The lighting is soft and clinical with a pure white background and subtle blue accents. The scene conveys a sense of high-tech efficiency and medical reliability within a modern minimalist workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4IIbwIwvPHy_JU0zDcOHoX8GmifXgXcIwr3qzhtD7YvaqW6y7F0VMTIXgjYonlg9vGWfj7xPEs41gAeHkD3H3tGJhmXzQImyOFRWlH6Kka6wqox7hqf6YepELX7PG4AjMiGms3yvQ3-FufZOsPxJpL2vwObrvvSTqhmpeN2ITkk6lp-OA-EhO7nndd4Pb4AgMn822t63XxJ-OQBKIU-TgywqK3GJPW99Ne4h-bZWbSxpjB_WiduAQLvpRX9_A6VSHAWgLFVs6X3x8"/>
+</div>
+</div>
+</section>
+<!-- Overview Section -->
+<section class="py-24 bg-surface-soft">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-section-title text-section-title mb-6">迈向医疗智能的新范式</h2>
+<div class="space-y-4 text-text-secondary leading-relaxed">
+<p class="">我们正在发布有史以来最智能的医疗 AI 操作系统。Medical Agent OS 2.0 不仅仅是一个助手，它是一个具备完全自主性（Autonomy）、长期规划能力（Planning）以及行业顶尖执行力的生产力引擎。</p>
+<p class="">通过 Agent Swarm（智能体集群）架构，我们实现了从“劳动力密集型”向“数字资产型”的跃迁。相比通用型 AI 如 GPT-5.5，Medical Agent OS 2.0 在医疗垂直领域的逻辑严密性与合规性上提升了 40% 以上。</p>
+</div>
+<div class="grid grid-cols-2 gap-6 mt-10">
+<div class="p-4 border-l-2 border-blue-500">
+<div class="text-2xl font-bold text-primary">85%</div>
+<div class="text-xs text-text-tertiary">运营成本降低</div>
+</div>
+<div class="p-4 border-l-2 border-teal-500">
+<div class="text-2xl font-bold text-primary">24/7</div>
+<div class="text-xs text-text-tertiary">无间断自动化</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-white rounded-3xl p-8 border border-border-subtle flex flex-col justify-center items-center text-center">
+<div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-blue-600 text-4xl">neurology</span>
+</div>
+<h3 class="text-card-title font-card-title mb-4">决策大脑 (Decision Core)</h3>
+<p class="text-text-secondary text-sm">内置万亿级医学知识图谱，支持多步长链推理与自动化任务编排。</p>
+</div>
+<!-- Floating chips -->
+</div>
+</div>
+</div>
+</section>
+<!-- Benchmarking Table -->
+<section class="py-24 bg-white">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-section-title text-section-title mb-4">性能基准测试</h2>
+<p class="text-text-secondary">在真实医疗场景中与各路方案的深度对比</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-border-subtle">
+<th class="py-6 px-4 text-left font-semibold text-text-tertiary">指标</th>
+<th class="py-6 px-4 text-center font-bold text-blue-600 bg-blue-50/50 rounded-t-xl">Medical Agent OS 2.0</th>
+<th class="py-6 px-4 text-center font-medium text-text-secondary">传统人工运营</th>
+<th class="py-6 px-4 text-center font-medium text-text-secondary">通用 AI 助手</th>
+<th class="py-6 px-4 text-center font-medium text-text-secondary">竞品医疗 AI A</th>
+<th class="py-6 px-4 text-center font-medium text-text-secondary">竞品医疗 AI B</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle">
+<tr>
+<td class="py-5 px-4 font-medium">诊前预问诊效率</td>
+<td class="py-5 px-4 text-center font-bold text-blue-600 bg-blue-50/50">92.7%</td>
+<td class="py-5 px-4 text-center text-text-secondary">15.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">45.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">78.5%</td>
+<td class="py-5 px-4 text-center text-text-secondary">72.0%</td>
+</tr>
+<tr>
+<td class="py-5 px-4 font-medium">病历书写准确率</td>
+<td class="py-5 px-4 text-center font-bold text-blue-600 bg-blue-50/50">94.3%</td>
+<td class="py-5 px-4 text-center text-text-secondary">88.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">62.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">89.1%</td>
+<td class="py-5 px-4 text-center text-text-secondary">85.4%</td>
+</tr>
+<tr>
+<td class="py-5 px-4 font-medium">GEO 内容生成质量</td>
+<td class="py-5 px-4 text-center font-bold text-blue-600 bg-blue-50/50">89.6%</td>
+<td class="py-5 px-4 text-center text-text-secondary">12.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">55.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">68.2%</td>
+<td class="py-5 px-4 text-center text-text-secondary">61.0%</td>
+</tr>
+<tr>
+<td class="py-5 px-4 font-medium">合规审计覆盖率</td>
+<td class="py-5 px-4 text-center font-bold text-blue-600 bg-blue-50/50">99.2%</td>
+<td class="py-5 px-4 text-center text-text-secondary">5.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">20.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">75.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">68.0%</td>
+</tr>
+<tr>
+<td class="py-5 px-4 font-medium">患者随访完成率</td>
+<td class="py-5 px-4 text-center font-bold text-blue-600 bg-blue-50/50">87.4%</td>
+<td class="py-5 px-4 text-center text-text-secondary">22.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">38.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">64.5%</td>
+<td class="py-5 px-4 text-center text-text-secondary">59.0%</td>
+</tr>
+<tr>
+<td class="py-5 px-4 font-medium">专家产能释放率</td>
+<td class="py-5 px-4 text-center font-bold text-blue-600 bg-blue-50/50">81.8%</td>
+<td class="py-5 px-4 text-center text-text-secondary">0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">15.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">42.0%</td>
+<td class="py-5 px-4 text-center text-text-secondary">35.0%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Deep Dive Section -->
+<section class="py-24 bg-surface-soft">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-section-title text-section-title mb-4"><p class="" data-pm-slice="0 0 []">四大智能体矩阵（Agent Swarm）</p></h2>
+<p class="text-text-secondary">我们构建了端到端的医疗生产力回路，从患者触达到临床决策的全链路数字化。</p>
+</div>
+</div>
+<div class="bento-grid">
+<!-- Marketing Matrix -->
+<div class="col-span-12 md:col-span-6 glass-card p-8 rounded-3xl group">
+<h3 class="text-card-title font-card-title mb-3"><p class="" data-pm-slice="1 1 []">营销管理矩阵</p></h3>
+<p class="text-text-secondary text-sm mb-6"><p class="" data-pm-slice='1 1 ["bulletList",{},"listItem",{}]'>名医 IP 数字人 + GEO 内容工厂、流量投流优化、意向锁定智能体</p></p>
+<img class="w-full h-40 object-cover rounded-xl border border-border-subtle opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A futuristic data visualization showing a network of medical information nodes spreading through a digital space. The visual uses glowing blue and white lines to represent flow and growth. The style is clean and high-tech, representing marketing and digital asset expansion in a medical context, with a professional and clinical tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Ck2ys4Gkk19H544d3fDocf6wKrC8epxD1piz7vCnyMxzai4PM-DlsFdc6XPVlMNGb5md2HOqLUmqp5y-3BomSY3Uf4fPPV3cZX43jjd9scxX8WvffbxNtlc19PjCnR4wVgQ0qB22qoT8pzDsZoAoDINp9Vkoiul8SNynyQc12XUqmlbiKKKWErzQM0l5xSbPri_15V6UkRK3nJISvdqt2XHuItite4XK8yV8Q-1o7QjtAt2508YW8iJiY1NP2F0qtxD1b32nkEXv"/>
+</div>
+<!-- Service Matrix -->
+<div class="col-span-12 md:col-span-6 glass-card p-8 rounded-3xl group">
+<h3 class="text-card-title font-card-title mb-3"><p class="" data-pm-slice='1 1 ["bulletList",{},"listItem",{}]'>医疗服务矩阵</p></h3>
+<p class="text-text-secondary text-sm mb-6"><p class="" data-pm-slice='1 1 ["bulletList",{},"listItem",{}]'>专家临床助手、智能分诊排班</p></p>
+<img class="w-full h-40 object-cover rounded-xl border border-border-subtle opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A macro close-up of a high-resolution touch screen showing patient management icons and health indicators. The lighting is bright and clear, reflecting a clinical white environment. The design is modern, featuring rounded corners and soft shadows that emphasize a user-friendly and sophisticated medical service interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOfl7SOSPAi5qTj4UvuB8EfXC1_XmRdgCoTLTekQhvF6S2L0Z84bIbFvFCZSPOWKr4iBkhsZuJNhl_WHWPEhMKNZekZ3EM4xnfuev0niaBVB6nhVwc1OyWtDOQeX2GVDj51zAcCfoeqJXGx--VWBdxEcKaJFjZA7blbrUIt1pxXuka9oHufvs7bBBA1vLDRTAX-PNeOanGV3xDol2vFWFMwXe8tAHmkt_4mPm5koLjDkzWsnSwv8e4wUTTpbQF9exN2MIORKnjMYTV"/>
+</div>
+<!-- Compliance Matrix -->
+<div class="col-span-12 md:col-span-4 glass-card p-8 rounded-3xl">
+<h3 class="text-card-title font-card-title mb-3"><p class="" data-pm-slice='1 1 ["bulletList",{},"listItem",{}]'>合规风控矩阵</p></h3>
+<p class="text-text-secondary text-sm">全栈式 AI 合规审计，确保每一条医疗指令都符合法律与医学伦理。</p>
+</div>
+<!-- Digital Asset Matrix -->
+<div class="col-span-12 md:col-span-8 glass-card p-8 rounded-3xl bg-zinc-900 text-white border-none">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1">
+<h3 class="text-xl font-bold mb-3 text-white"><p class="" data-pm-slice='1 1 ["bulletList",{},"listItem",{}]'>数字资产矩阵</p></h3>
+<p class="text-zinc-400 text-sm">将隐性专家经验转化为可流转的数字化智能体资产，实现机构知识的永续传承与指数级扩张。</p>
+</div>
+<div class="hidden md:block w-48 h-48 bg-gradient-to-br from-blue-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies -->
+<section class="py-24 bg-white">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="mb-16">
+<h2 class="font-section-title text-section-title mb-4">行业落地案例解析</h2>
+<p class="text-text-secondary">听听他们是如何重塑医疗工作流的</p>
+</div>
+<div class="space-y-12">
+<!-- Scenario 1 -->
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-4">
+<h3 class="text-2xl font-bold text-primary">智能体编程: 医疗工作流自动化</h3>
+</div>
+<p class="text-text-secondary mb-6 leading-relaxed">
+                                在 Terminal-Bench 2.0 中获得 82.7% 的执行准确率。不仅仅是对话，更是对复杂医疗指令的精确解析与执行。
+                            </p>
+<div class="relative p-8 bg-surface-soft rounded-2xl italic text-text-primary">
+
+                                “这是我用过的第一个在概念理解上具有极高清晰度的医疗 AI 系统。它能理解复杂的临床逻辑并自动生成最优路径。”
+                            </div>
+</div>
+<div class="flex-1 w-full">
+<img class="w-full h-[400px] object-cover rounded-3xl shadow-xl" data-alt="A clean, close-up shot of a developer's hand pointing at a glowing code interface with medical iconography embedded in the lines of code. The environment is dark with sharp, neon blue light, creating a focused and high-tech atmosphere that represents AI medical workflow programming and automation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjPMIniXRMh3K_aGCzyctnYZmiIqOUmFTzcwh3917K9vaYaYBzcP3ENCwc21ft4kg-te0xMQ04kW3TGF80dCnAJSf42J1Z3AhLXugZoyLULb8nTgEhtElDmqf80Ah_3Fhaf_Xxq1kZfJtJgCsdjPX0JIt42F09Ki0aaCSetLpxey8KT2xgtPJk4dSLRQO9k0LZnnssUyI06KWoXGNuJiH66P8Alyq6wPJu9iGH9VjIR7lOqpHXAxKFNDCDKw7KKxqJoFfx11158tbB"/>
+</div>
+</div>
+<!-- Scenario 2 -->
+<div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-4">
+<h3 class="text-2xl font-bold text-primary">儿少心理精神: 规模化诊疗与 LTV 长效管理</h3>
+</div>
+<p class="text-text-secondary mb-6 leading-relaxed">
+                                通过 AI 驱动的情感支持与长周期干预模型，实现了针对儿童心理健康的规模化干预与数字化病程追踪。
+                            </p>
+<div class="relative p-8 bg-surface-soft rounded-2xl italic text-text-primary">
+
+                                “它真的让我感觉是在与更高阶的智能协同工作，大大缩减了病历整理和患者随访的机械时间。”
+                            </div>
+</div>
+<div class="flex-1 w-full">
+<img class="w-full h-[400px] object-cover rounded-3xl shadow-xl" data-alt="A soothing, warm-toned image showing a digital tablet on a wooden desk next to a stethoscope and a small plant. The tablet displays a friendly, accessible health monitoring interface with colorful charts. The light is soft and natural, suggesting a compassionate and patient-centric approach to mental health and digital management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8jzDsQh3m3J8_fuUXTQKCeGsqGI3xuhZzW1SN6rwAoRy5wmnRDN31soJbLeXN-kUGL9atdJJt3A5o0DQd24rRCoKn-NPH03MqZRrvW-2xdiysd4nOa5IDvOw7K7Fjd_mujl3-SUU1trE7VOD1S-VF7RIIuTcmOyY5kGIqsUqOf-o9VzHt6wSh6g8DqGfHQJ2ruvOqRi6z4QSDbAKrFmUl7ollLx6MuKbLJiE8M1yM6dQooyv9PKqD81q8tawmOQn64vGIlnTHOwUA"/>
+</div>
+</div>
+<!-- Scenario 3 -->
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-4">
+<h3 class="text-2xl font-bold text-primary">中医名医传承: 隐性临床思维的数字化</h3>
+</div>
+<p class="text-text-secondary mb-6 leading-relaxed">
+                                基于 Michael Truell 提及的执行韧性理论，我们将顶尖中医专家的隐性诊疗思路固化为 AI 逻辑，实现名医经验的规模化复制。
+                            </p>
+<div class="relative p-8 bg-surface-soft rounded-2xl italic text-text-primary">
+
+                                “该系统展现了极强的执行韧性，能处理跨度数月的长周期随访任务，精准还原了名医的临床决策轨迹。”
+                            </div>
+</div>
+<div class="flex-1 w-full">
+<img class="w-full h-[400px] object-cover rounded-3xl shadow-xl" data-alt="An artistic blend of traditional Chinese medicine elements like dried herbs and a wooden medicine cabinet, overlaid with semi-transparent digital data nodes and holographic patient files. The lighting is ambient and professional, bridging the gap between ancient wisdom and cutting-edge digital intelligence in a clean, modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiOuUtWVE5liFbm0xR1fbIF0amI21byIITbSej_bMCHsUp7l4_lhBsh0BFgek3KxRGD751pbmxdEbTzJGjnqp4EWiEy7BdpWu2nZDD54XTdUkCrcW-vxBs4G39hDQOD5GRrxv2w5a4hCcvsI3zsLnrgUxWfGRuZY3l_n1YKyTs_9zUU7PnPi2zC1DLHH7HibfQ56nQsaQIoNxYLFYokPlE2OoqDXWylWwABkH58aH4x_4p_-nXfyPYzRoDjBoBGd62K_tcCTWsrGGI"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-white relative">
+<div class="max-w-[1200px] mx-auto px-6">
+<div class="bg-primary rounded-[40px] p-12 md:p-24 text-center text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-400 to-transparent"></div>
+<div class="relative z-10">
+<h2 class="font-hero-title text-4xl md:text-5xl mb-8">开启您的医疗 AI 进化之旅</h2>
+<p class="text-zinc-400 text-lg mb-12 max-w-xl mx-auto">选择适合您的版本，即刻部署 Medical Agent OS 2.0，将医疗服务转化为领先的数字资产。</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="bg-white text-primary px-10 py-5 rounded-full font-bold hover:bg-zinc-100 transition-all">试用 EvoLeap</button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-full font-bold hover:bg-white/20 transition-all">联系 Enterprise 销售</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-800 py-12">
+<div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<div>
+<span class="font-bold text-zinc-900 dark:text-zinc-50 block mb-4">OpenAI</span>
+<p class="font-sans text-xs text-zinc-500 dark:text-zinc-400 max-w-sm">© 2024 OpenAI. 致力于确保通用人工智能造福全人类。</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest">Research</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#">Overview</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#">Index</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#">GTP-4o</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest">Company</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#">About us</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#">News</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest">Legal</span>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#">Terms</a>
+<a class="font-sans text-xs text-zinc-500 dark:text-zinc-400 hover:underline transition-all" href="#">Privacy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

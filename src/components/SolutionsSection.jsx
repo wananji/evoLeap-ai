@@ -1,14 +1,19 @@
+import { useNavigate } from 'react-router-dom'
+
 function SolutionsSection() {
+  const navigate = useNavigate()
+  
   const solutions = [
     {
       title: "Medical Agent OS 2.0",
       description: "自动化的企业级智能助理，重塑工作流程。",
-      image: "/image2.png"
+      image: "/image2.png",
+      link: "/medical-agent-os"
     },
     {
       title: "VKA资产化引擎",
       description: "深度学习研究的前沿阵地，探索无限可能。",
-      image: "/image3.png"
+      image: "/image4.jpg"
     },
     {
       title: "GEO 增长引擎",
@@ -17,13 +22,23 @@ function SolutionsSection() {
     }
   ];
 
+  const handleCardClick = (link) => {
+    if (link) {
+      navigate(link)
+    }
+  }
+
   return (
     <section className="max-w-[1200px] mx-auto px-6 py-xl">
       <h2 className="font-section-title text-section-title mb-lg">解决方案</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
         {solutions.map((solution, index) => (
-          <div key={index} className="group cursor-pointer">
-            <div 
+          <div 
+            key={index} 
+            className="group cursor-pointer"
+            onClick={() => handleCardClick(solution.link)}
+          >
+            <div
               className="aspect-square w-full rounded-xl mb-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-[1.02]"
               style={{
                 backgroundImage: `url(${solution.image})`,

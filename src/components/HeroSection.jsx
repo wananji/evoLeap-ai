@@ -23,7 +23,13 @@ function HeroSection() {
             <h3 className="font-card-title text-card-title mb-sm">
               三层堡垒架构
             </h3>
-            <div className="w-full h-32 bg-surface-container-low rounded-lg bg-gradient-purple"></div>
+            <div className="w-full h-32 rounded-lg overflow-hidden relative">
+              <img 
+                src="/三重盾.jpg" 
+                alt="三层堡垒架构"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
           <div className="group cursor-pointer p-md border border-border-subtle rounded-xl hover:shadow-sm hover:-translate-y-1 transition-all duration-300">
             <p className="font-meta-data text-meta-data text-text-secondary mb-xs">
@@ -32,8 +38,12 @@ function HeroSection() {
             <h3 className="font-card-title text-card-title mb-sm">
               Base+RaaS
             </h3>
-            <div className="w-full h-32 bg-surface-container-low rounded-lg bg-zinc-900 flex items-center justify-center">
-              <span className="material-symbols-outlined text-white text-4xl">code</span>
+            <div className="w-full h-48 rounded-lg overflow-hidden relative">
+              <img 
+                src="/商业模式2.jpg" 
+                alt="Base+RaaS"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

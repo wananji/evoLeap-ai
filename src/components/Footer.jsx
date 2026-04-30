@@ -22,13 +22,13 @@ function Footer() {
             EvoLeap AI
           </span>
           <p className="font-sans text-xs text-zinc-500 dark:text-zinc-400 max-w-sm">
-            © 2025 <span style={{ color: '#235CEB' }}>EvoLeap AI</span> 极智跃维（北京）科技有限公司
+            © 2025 EvoLeap AI 极智跃维（北京）科技有限公司
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           {footerLinks.map((section, index) => (
             <div key={index} className="flex flex-col gap-3">
-              <span className="text-zinc-900 dark:text-zinc-50 font-semibold text-xs uppercase tracking-widest">
+              <span className="font-semibold text-xs uppercase tracking-widest" style={{ color: '#235CEB' }}>
                 {section.title}
               </span>
               {section.links.map((link, linkIndex) => (

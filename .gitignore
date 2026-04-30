@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+.DS_Store
+dist/
+.vite/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Env
+.env
+.env.local
